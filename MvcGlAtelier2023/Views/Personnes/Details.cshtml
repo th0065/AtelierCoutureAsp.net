@@ -1,0 +1,58 @@
+﻿@model MvcGlAtelier2023.Models.Personne
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Personne</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NomPers)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomPers)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrenomPers)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrenomPers)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdressePers)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdressePers)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmailPers)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmailPers)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TelPers)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TelPers)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdPers }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

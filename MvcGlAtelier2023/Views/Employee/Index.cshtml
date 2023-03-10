@@ -1,0 +1,106 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <h2>Employees </h2>
+    <div class="btn btn-info">
+        @Html.ActionLink("Imprimer", "ReportEmployees", new { @class = "btn btn-info" })
+    </div>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" onclick="clearTextBox();">Nouveau </button><br /><br />
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>
+                    ID
+                </th>
+                <th>
+                    Nom Prénom
+                </th>
+                <th>
+                    Age
+                </th>
+                <th>
+                    Etat
+                </th>
+                <th>
+                    Pays
+                </th>
+                <th>
+                    Action
+                </th>
+            </tr>
+        </thead>
+        <tbody class="tbody">
+
+           
+
+        </tbody>
+    </table>
+</div>
+
+<div class="spinner-border" id="spinner" style="display:none; font-size:50px; text-align:center;">
+    <span class="visually-hidden">Loading <i class="fa fa-spinner"></i> </span>
+    
+
+</div>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                @*<button type="button" class="close" data-dissmiss="modal"><span
+                    aria-hidden="true">×</span></button>*@
+                <button type="button" class="close" data-dismiss="modal">×</button>
+                <h4 class="modal-title" id="myModalLabel">Ajouter Employee</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="Id">ID</label>
+                        <input type="text" class="form-control" id="Id"
+                               placeholder="Id" disabled="disabled" />
+                    </div>
+                    <div class="form-group">
+                        <label for="Name"> Nom Prénom</label>
+                        <input type="text" class="form-control" id="Name"
+                               placeholder="Nom Prénom" />
+                    </div>
+                    <div class="form-group">
+                        <label for="Age">Age</label>
+                        <input type="text" class="form-control" id="Age"
+                               placeholder="Age" />
+                    </div>
+                    <div class="form-group">
+                        <label for="State">Etat</label>
+                        <input type="text" class="form-control" id="State"
+                               placeholder="Etat" />
+                    </div>
+                    <div class="form-group">
+                        <label for="Country">Pays</label>
+                        <input type="text" class="form-control" id="Country"
+                               placeholder="Pays" />
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btnAdd"
+                        onclick="return Add();">
+                    Ajouter
+                </button>
+                <button type="button" class="btn btn-primary" id="btnUpdate"
+                        style="display:none;" onclick="Update();">
+                    Modifier
+                </button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+   
+    @Scripts.Render("~/Scripts/Employee.js")
+   
+
+}

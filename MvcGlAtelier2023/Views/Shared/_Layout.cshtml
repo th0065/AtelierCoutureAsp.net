@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Mon application ASP.NET</title>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Template/contactform")
+    @Styles.Render("~/Template/css/zabuto_calendar.css")
+    @Styles.Render("~/Template/lib/gritter/css/jquery.gritter.css")
+    @Styles.Render("~/Template/lib/bootstrap/css/bootstrap.min.css")
+    @Styles.Render("~/Template/lib/font-awesome/css/font-awesome.css")
+    @Styles.Render("~/Template/img/favicon.png")
+    @Styles.Render("~/Template/css/style.css")
+    @Styles.Render("~/Template/css/style-responsive.css")
+    @Styles.Render("~/Template/lib/chart-master/Chart.js")
+    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Template/css/spinner.css")
+
+</head>
+<body>
+    <section id="container">
+        <!-- **********************************************************************************************************************************************************
+            TOP BAR CONTENT & NOTIFICATIONS
+            *********************************************************************************************************************************************************** -->
+        <!--header start-->
+        <header class="header black-bg">
+            <div class="sidebar-toggle-box">
+                <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+            </div>
+            <!--logo start-->
+            <a href="index.html" class="logo"><b>T<span>H</span></b></a>
+            <!--logo end-->
+            <div class="nav notify-row" id="top_menu">
+                <ul class="nav navbar-nav nav top-menu">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("À propos de", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Employers", "Index", "Employee")</li>
+                </ul>
+
+
+            </div>
+            <div class="top-menu">
+                <ul class="nav  pull-right top-menu">
+                    <li>@Html.Partial("_LoginPartial")</li>
+                </ul>
+            </div>
+        </header>
+        <!--header end-->
+        <!-- **********************************************************************************************************************************************************
+            MAIN SIDEBAR MENU
+            *********************************************************************************************************************************************************** -->
+        <!--sidebar start-->
+        <aside>
+            <div id="sidebar" class="nav-collapse ">
+                <!-- sidebar menu start-->
+                <ul class="sidebar-menu" id="nav-accordion">
+                    <p class="centered"><a href="profile.html"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
+                    <h5 class="centered">Sam Soffes</h5>
+                    <li class="mt">
+                        <a class="active" href="index.html">
+                            <i class="fa fa-dashboard"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="javascript:;">
+                            <i class="fa fa-desktop"></i>
+                            <span>UI Elements</span>
+                        </a>
+
+                    </li>
+                    <li class="sub-menu">
+                        <a href="javascript:;">
+                            <i class="fa fa-cogs"></i>
+                            <span>Components</span>
+                        </a>
+
+                    </li>
+                    <li class="sub-menu">
+                        <a href="javascript:;">
+                            <i class="fa fa-book"></i>
+                            <span>Extra Pages</span>
+                        </a>
+
+                    </li>
+                    <li class="sub-menu">
+                        <a href="javascript:;">
+                            <i class="fa fa-tasks"></i>
+                            <span>Forms</span>
+                        </a>
+
+                    </li>
+
+
+                </ul>
+                <!-- sidebar menu end-->
+            </div>
+        </aside>
+        <!--sidebar end-->
+        <!-- **********************************************************************************************************************************************************
+            MAIN CONTENT
+            *********************************************************************************************************************************************************** -->
+        <!--main content start-->
+        <section id="main-content">
+            <section class="wrapper">
+                <div class="row">
+
+                    <div class="container body-content">
+                        @RenderBody()
+                        <hr />
+                        <footer>
+                            <p>&copy; @DateTime.Now.Year - Mon application ASP.NET</p>
+                        </footer>
+                    </div>
+
+
+
+                </div>
+                <!-- /row -->
+            </section>
+        </section>
+        <!--main content end-->
+        <!--footer start-->
+        <footer class="site-footer">
+            <div class="text-center">
+                <p>
+                    &copy; Copyrights <strong>Dashio</strong>. All Rights Reserved
+                </p>
+                <div class="credits">
+                    <!--
+                      You are NOT allowed to delete the credit link to TemplateMag with free version.
+                      You can delete the credit link only if you bought the pro version.
+                      Buy the pro version with working PHP/AJAX contact form: https://templatemag.com/dashio-bootstrap-admin-template/
+                      Licensing information: https://templatemag.com/license/
+                    -->
+                    Created with Dashio template by <a href="https://templatemag.com/">TemplateMag</a>
+                </div>
+                <a href="index.html#" class="go-top">
+                    <i class="fa fa-angle-up"></i>
+                </a>
+            </div>
+        </footer>
+        <!--footer end-->
+    </section>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    
+
+</body>
+</html>

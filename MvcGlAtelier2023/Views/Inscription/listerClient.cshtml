@@ -1,0 +1,68 @@
+﻿@model PagedList.PagedList<MvcGlAtelier2023.Models.ClientViewModel>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "listerClient";
+}
+
+<h2>listerClient</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().NomPers)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().PrenomPers)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().AdressePers)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().EmailPers)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().TelPers)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().Sexe)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomPers)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrenomPers)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdressePers)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmailPers)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TelPers)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sexe)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdPers }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdPers }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdPers })
+        </td>
+    </tr>
+}
+
+</table>
+<br/>
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber ) / @Model.PageCount
+
+@Html.PagedListPager(Model, page=> Url.Action("listerClient", new { page }))
+    <div></div>
