@@ -9,11 +9,13 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+
 namespace MvcGlAtelier2023.Controllers
 {
     public class EmployeeController : Controller
     {
         private bdAtelier2023Context db = new bdAtelier2023Context();
+        private object stream;
         // GET: Employee
         public ActionResult Index()
         {

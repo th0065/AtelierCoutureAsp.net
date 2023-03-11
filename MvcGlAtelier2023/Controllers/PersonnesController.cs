@@ -7,6 +7,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using MvcGlAtelier2023.Models;
+using MvcGlAtelier2023.App_Start;
+using MvcGlAtelier2023.Models.App_LocalResources;
 
 namespace MvcGlAtelier2023.Controllers
 {
@@ -17,6 +19,7 @@ namespace MvcGlAtelier2023.Controllers
         // GET: Personnes
         public ActionResult Index()
         {
+            this.Flash(ResourceMvc.Bienvenue,FlashLevel.Success);
             return View(db.personnes.ToList());
         }
 
@@ -51,6 +54,8 @@ namespace MvcGlAtelier2023.Controllers
             if (ModelState.IsValid)
             {
                 db.personnes.Add(personne);
+                GMailer gmail = new GMailer();
+                gmail.senMail("tharouna4@gmail.com", "test", "test");
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

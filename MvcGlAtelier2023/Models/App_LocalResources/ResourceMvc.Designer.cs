@@ -70,6 +70,15 @@ namespace MvcGlAtelier2023.Models.App_LocalResources {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Bienvenue sur la page du bla bla.
+        /// </summary>
+        public static string Bienvenue {
+            get {
+                return ResourceManager.GetString("Bienvenue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Nouveau.
         /// </summary>
         public static string New {

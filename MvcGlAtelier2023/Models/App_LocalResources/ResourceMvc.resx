@@ -120,6 +120,9 @@
   <data name="BackToList" xml:space="preserve">
     <value>Retour à la liste</value>
   </data>
+  <data name="Bienvenue" xml:space="preserve">
+    <value>Bienvenue sur la page du bla bla</value>
+  </data>
   <data name="New" xml:space="preserve">
     <value>Nouveau</value>
   </data>

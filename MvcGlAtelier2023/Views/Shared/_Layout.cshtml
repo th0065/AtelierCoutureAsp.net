@@ -109,6 +109,7 @@
                 <div class="row">
 
                     <div class="container body-content">
+                        @Html.Partial("_Flash")
                         @RenderBody()
                         <hr />
                         <footer>
@@ -151,6 +152,12 @@
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
     
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.flash-messages').delay(5000).fadeout();
+        });
+    </script>
+
 
 </body>
 </html>
